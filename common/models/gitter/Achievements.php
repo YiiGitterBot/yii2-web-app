@@ -14,7 +14,7 @@ use yii\db\ActiveRecord;
  * @property string $description
  * @property string $chatAnnounce
  */
-class Achievements extends ctiveRecord
+class Achievements extends ActiveRecord
 {
     /**
      * @inheritdoc
