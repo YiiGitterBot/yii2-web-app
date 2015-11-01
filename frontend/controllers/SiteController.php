@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use Yii;
 use yii\web\Controller;
+use common\models\gitter\Achievements;
 
 /**
  * Class SiteController
@@ -35,6 +36,10 @@ class SiteController extends Controller
      */
     public function actionAchievements()
     {
-        return $this->render('achievements');
+        $achievements = Achievements::find()->all();
+
+        return $this->render('achievements', [
+            'achievements' => $achievements
+        ]);
     }
 }
