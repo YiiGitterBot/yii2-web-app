@@ -7,7 +7,8 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'yii-web-app-frontend',
+    'id' => 'yii2-web-app-frontend',
+    'name' => "Yii2 web applications for YiiGitterBot",
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
