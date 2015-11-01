@@ -11,5 +11,8 @@ return [
             'class' => 'yii\i18n\Formatter',
             'locale' => 'ru-RU'
         ],
+        'assetManager' => [
+            'linkAssets' => true
+        ],
     ],
 ];
