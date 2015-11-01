@@ -28,27 +28,27 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
+        ['label' => Yii::t('app', 'Achievements'), 'url' => ['/site/achievements']],
+        ['label' => Yii::t('app', 'Resource'), 'items' => [
+            '<li class="dropdown-header">' . Yii::t('app', 'Russian community') . '</li>',
+            ['label' => Yii::t('app', 'Chat'), 'url' => 'https://gitter.im/yiisoft/yii2/rus'],
+            ['label' => Yii::t('app', 'Community'), 'url' => 'http://www.yiiframework.ru/'],
+            ['label' => Yii::t('app', 'Documentation'), 'url' => 'http://www.yiiframework.com/doc-2.0/guide-index.html'],
+            '<li class="dropdown-header">' . Yii::t('app', 'English community') . '</li>',
+            ['label' => Yii::t('app', 'Chat'), 'url' => 'https://gitter.im/yiisoft/yii2'],
+            ['label' => Yii::t('app', 'Community'), 'url' => 'http://www.yiiframework.com/'],
+            ['label' => Yii::t('app', 'Documentation'), 'url' => 'http://www.yiiframework.com/doc-2.0/guide-index.html']
+        ]]
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
@@ -67,7 +67,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Html::a('Yii Gitter Bot', 'https://github.com/YiiGitterBot') ?> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
