@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-console',
+    'id' => 'yii2-web-app-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
