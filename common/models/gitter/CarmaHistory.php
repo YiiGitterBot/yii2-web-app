@@ -1,6 +1,6 @@
 <?php
 
-namespace app\commons\models\gitter;
+namespace common\models\gitter;
 
 use Yii;
 use yii\db\ActiveRecord;
