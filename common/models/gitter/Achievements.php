@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property string $title
  * @property string $description
  * @property string $chatAnnounce
+ * @property integer $count
  */
 class Achievements extends ActiveRecord
 {
@@ -33,7 +34,8 @@ class Achievements extends ActiveRecord
             [['key', 'title', 'chatAnnounce'], 'required'],
             [['description', 'chatAnnounce'], 'string'],
             [['key'], 'string', 'max' => 64],
-            [['title'], 'string', 'max' => 256]
+            [['title'], 'string', 'max' => 256],
+            ['count', 'integer']
         ];
     }
 
@@ -48,6 +50,7 @@ class Achievements extends ActiveRecord
             'title' => Yii::t('app', 'Title'),
             'description' => Yii::t('app', 'Description'),
             'chatAnnounce' => Yii::t('app', 'Chat Announce'),
+            'count' => Yii::t('app', 'Count'),
         ];
     }
 }
