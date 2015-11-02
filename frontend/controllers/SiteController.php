@@ -40,7 +40,7 @@ class SiteController extends Controller
 
         $query = Users::find()
             ->select(['username', 'carma', 'thanks', 'avatarUrlSmall'])
-            ->orderBy('users.carma DESC')
+            ->orderBy('carma DESC')
             ->all();
 
         return $query;
