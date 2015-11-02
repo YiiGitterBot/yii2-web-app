@@ -24,7 +24,7 @@ $this->title = Yii::$app->name;
                 <div class="media">
                     <span class="label label-danger pull-right"><?= Yii::t('app', 'Carma') ?>: {{user.carma}}</span>
                     <div class="media-left">
-                        <a href="#"><img class="media-object img-thumbnail" ng-src="{{user.avatarUrlSmall}}" alt="{{user.username}}"></a>
+                        <a href="#"><img class="media-object img-thumbnail user-pic" ng-src="{{user.avatarUrlSmall}}" alt="{{user.username}}"></a>
                     </div>
                     <div class="media-body media-middle">
                         <h4 class="media-heading">{{user.username}}</h4>
