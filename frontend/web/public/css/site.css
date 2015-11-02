@@ -21,6 +21,14 @@ body {
     padding-top: 20px;
 }
 
+.search-text {
+    color: #d5d5d5;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .jumbotron {
     text-align: center;
     background-color: transparent;
