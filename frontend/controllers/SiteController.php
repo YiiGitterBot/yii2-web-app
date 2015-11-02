@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use Yii;
 use yii\web\Controller;
+use common\models\gitter\Users;
 use common\models\gitter\Achievements;
 
 /**
@@ -29,6 +30,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actionGetUser() {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $query = Users::find()
+            ->select(['username', 'carma', 'thanks', 'avatarUrlSmall'])
+            ->orderBy('users.carma DESC')
+            ->all();
+
+        return $query;
     }
 
     /**
