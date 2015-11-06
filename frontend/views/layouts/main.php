@@ -36,7 +36,7 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('app', 'Achievements'), 'url' => ['/site/achievements']],
+        ['label' => Yii::t('app', 'Achievements'), 'url' => ['/achievements/index']],
         ['label' => Yii::t('app', 'Resource'), 'items' => [
             '<li class="dropdown-header">' . Yii::t('app', 'Russian community') . '</li>',
             ['label' => Yii::t('app', 'Chat'), 'url' => 'https://gitter.im/yiisoft/yii2/rus'],
