@@ -39,7 +39,7 @@ class SiteController extends Controller
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
         $query = Users::find()
-            ->select(['username', 'carma', 'thanks', 'avatarUrlSmall'])
+            ->select(['username', 'carma', 'thanks', 'avatarUrl'])
             ->orderBy('carma DESC')
             ->all();
 
@@ -51,7 +51,9 @@ class SiteController extends Controller
      */
     public function actionAchievements()
     {
-        $achievements = Achievements::find()->all();
+        $achievements = Achievements::find()
+            ->with(['userAchievements'])
+            ->all();
 
         return $this->render('achievements', [
             'achievements' => $achievements
