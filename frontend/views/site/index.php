@@ -24,12 +24,12 @@ $this->title = Yii::$app->name;
                 <div class="media">
                     <span class="label label-danger pull-right"><?= Yii::t('app', 'Carma') ?>: {{user.carma}}</span>
                     <div class="media-left">
-                        <a href="#"><img class="media-object img-thumbnail user-pic" ng-src="{{user.avatarUrlSmall}}" alt="{{user.username}}"></a>
+                        <a href="#"><img class="media-object img-thumbnail user-pic" ng-src="{{user.avatarUrl}}" alt="{{user.username}}"></a>
                     </div>
                     <div class="media-body media-middle">
                         <h4 class="media-heading">{{user.username}}</h4>
                         <p>
-                            <a href="https://github.com/{{user.username}}" title="<?= Yii::t('app', 'Profile on GitHub.Com') ?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                            <a href="https://github.com/{{user.username}}" title="<?= Yii::t('app', 'Profile on github.com') ?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                             <a href="https://gitter.im/{{user.username}}" title="<?= Yii::t('app', 'Private message') ?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <?= Yii::t('app', 'Private message') ?></a>
                         </p>
                     </div>
