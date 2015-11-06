@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property integer $giverId
  * @property integer $timestamp
  * @property integer $type
+ * @property string $room
  * @property string $message
  */
 class CarmaHistory extends ActiveRecord
@@ -31,9 +32,10 @@ class CarmaHistory extends ActiveRecord
     public function rules()
     {
         return [
-            [['userId', 'giverId', 'timestamp', 'type'], 'required'],
+            [['userId', 'giverId', 'timestamp', 'type', 'room'], 'required'],
             [['userId', 'giverId', 'timestamp', 'type'], 'integer'],
-            [['message'], 'string']
+            [['message'], 'string'],
+            [['room'], 'string', 'max' => 255]
         ];
     }
 
@@ -48,6 +50,7 @@ class CarmaHistory extends ActiveRecord
             'giverId' => Yii::t('app', 'Giver ID'),
             'timestamp' => Yii::t('app', 'Timestamp'),
             'type' => Yii::t('app', 'Type'),
+            'room' => Yii::t('app', 'Room'),
             'message' => Yii::t('app', 'Message'),
         ];
     }

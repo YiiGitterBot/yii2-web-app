@@ -13,9 +13,7 @@ use yii\db\ActiveRecord;
  * @property integer $lastMessageTimestamp
  * @property integer $carma
  * @property integer $thanks
- * @property integer $messagesCount
- * @property string $avatarUrlSmall
- * @property string $avatarUrlMedium
+ * @property string $avatarUrl
  */
 class Users extends ActiveRecord
 {
@@ -34,9 +32,9 @@ class Users extends ActiveRecord
     {
         return [
             [['username'], 'required'],
-            [['lastMessageTimestamp', 'carma', 'thanks', 'messagesCount'], 'integer'],
+            [['lastMessageTimestamp', 'carma', 'thanks'], 'integer'],
             [['username'], 'string', 'max' => 128],
-            [['avatarUrlSmall', 'avatarUrlMedium'], 'max' => 255]
+            [['avatarUrl'], 'string', 'max' => 255]
         ];
     }
 
@@ -51,9 +49,7 @@ class Users extends ActiveRecord
             'lastMessageTimestamp' => Yii::t('app', 'Last Message Timestamp'),
             'carma' => Yii::t('app', 'Carma'),
             'thanks' => Yii::t('app', 'Thanks'),
-            'messagesCount' => Yii::t('app', 'Messages Count'),
-            'avatarUrlSmall' => Yii::t('app', 'Avatar Url Small'),
-            'avatarUrlMedium' => Yii::t('app', 'Avatar Url Medium'),
+            'avatarUrl' => Yii::t('app', 'Avatar Url'),
         ];
     }
 

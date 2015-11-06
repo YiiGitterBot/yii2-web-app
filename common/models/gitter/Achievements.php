@@ -13,7 +13,8 @@ use yii\db\ActiveRecord;
  * @property string $title
  * @property string $description
  * @property string $chatAnnounce
- * @property integer $count
+ *
+ * @property UserAchievements[] $userAchievements
  */
 class Achievements extends ActiveRecord
 {
@@ -34,8 +35,7 @@ class Achievements extends ActiveRecord
             [['key', 'title', 'chatAnnounce'], 'required'],
             [['description', 'chatAnnounce'], 'string'],
             [['key'], 'string', 'max' => 64],
-            [['title'], 'string', 'max' => 256],
-            ['count', 'integer']
+            [['title'], 'string', 'max' => 256]
         ];
     }
 
@@ -49,8 +49,15 @@ class Achievements extends ActiveRecord
             'key' => Yii::t('app', 'Key'),
             'title' => Yii::t('app', 'Title'),
             'description' => Yii::t('app', 'Description'),
-            'chatAnnounce' => Yii::t('app', 'Chat Announce'),
-            'count' => Yii::t('app', 'Count'),
+            'chatAnnounce' => Yii::t('app', 'Chat Announce')
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserAchievements()
+    {
+        return $this->hasMany(UserAchievements::className(), ['userId' => 'id']);
     }
 }
